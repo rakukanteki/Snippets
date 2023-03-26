@@ -1,0 +1,17 @@
+//DELETING THE FIRST NODE OF A LIST
+
+struct node* del_first(struct node* hhead)
+{
+    if(head==NULL)
+    {
+        cout<<"List is empty"<<endl;
+    }
+    else
+    {
+        struct node* temp = head;
+        head = head->link;
+        free(temp);
+        temp=NULL;
+    }
+    return head;
+}
