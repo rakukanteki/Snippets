@@ -1,0 +1,16 @@
+//FUNCTION FOR PRINTING THE DATA OF LIST
+
+void print_data(struct node* head)
+{
+    if(head==NULL)
+    {
+        cout<<"The list is empty"<<endl;
+    }
+    struct node* ptr=NULL;
+    ptr=head;
+    while(ptr!= NULL)
+    {
+        cout<<ptr->data<<' ';
+        ptr=ptr->link; 
+    }
+}
