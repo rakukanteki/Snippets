@@ -1,0 +1,17 @@
+//REVERSING A LIST
+
+struct node* reversing(struct node* head)
+{
+    struct node* prev=NULL;
+    struct node* next=NULL;
+
+    while(head!=NULL)
+    {
+        next = head->link;
+        head->link = prev;
+        prev = head;
+        head=next;
+    }
+    head=prev;
+    return head;
+}
