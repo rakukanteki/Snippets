@@ -1,0 +1,30 @@
+//DELETING A  NODE AT A CERTAIN POSITION
+
+void del_pos(struct node** head, int pos)
+{
+    struct node* previous=*head;
+    struct node* current=*head;
+
+    if(*head==NULL)
+    {
+        cout<<"The list is empty"<<endl;
+    }
+    else if(pos==1)
+    {
+        *head=current->link;
+        free(current);
+        current=NULL;
+    }
+    else 
+    {
+        while(pos!=1)
+        {
+            previous=current;
+            current = current->link;
+            pos--;
+        }
+        previous->link=current->link;
+        free(current);
+        current=NULL;
+    }
+}
