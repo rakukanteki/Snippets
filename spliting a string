@@ -1,0 +1,6 @@
+//SPLITING A STRING INTO TWO SUB STRINGS
+for(i=0,j=0; i<length; i++,j+=2)
+{
+  even[i]=s[j];
+  odd[i]=s[j+1];
+}
