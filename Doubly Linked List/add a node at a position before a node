@@ -1,0 +1,31 @@
+//ADDING A NODE AT A CERTAIN POSITION AFTER A NODE
+struct node* addbeforeposition(struct node* head, int data, int pos)
+{
+    struct node* temp, *temp2, *newnode;
+    newnode=NULL;
+    temp2=NULL;
+    temp=head;
+    newnode=addtoempty(newnode,data);//called for creating a new node
+    while(pos > 2)//we are adding position 3
+    {
+        temp = temp->next;
+        pos--;
+    } 
+    //CONSIDERING IF WE ARE ADDING AT THE BEGINING OF A LIST
+    if(pos==1)
+    {
+        
+        head=addatbegin(head,data);
+    }
+    else
+    {
+        temp2=temp->next;
+        temp->next=newnode;
+        temp2->prev=newnode;
+        newnode->next=temp2;
+        newnode->prev=temp;
+    }
+
+    return head;
+
+}
