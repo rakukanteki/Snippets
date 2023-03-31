@@ -1,0 +1,29 @@
+//ADDING A NODE AT A CERTAIN POSITION AFTER A NODE
+struct node* addatposition(struct node* head, int data, int pos)
+{
+    struct node* temp, *temp2, *newnode;
+    temp=head;
+    newnode=addtoempty(newnode,data);//called for creating a new node
+    while(pos != 1)
+    {
+        temp = temp->next;
+        pos--;
+    } 
+    //CONSIDERING IF WE ARE ADDING AT THE END OF A LIST
+    if(temp->next == NULL)
+    {
+        temp->next=newnode;
+        newnode->prev=temp; 
+    }
+    else
+    {
+        temp2=temp->next;
+        temp->next=newnode;
+        temp2->prev=newnode;
+        newnode->next=temp2;
+        newnode->prev=temp;
+    }
+
+    return head;
+
+}
