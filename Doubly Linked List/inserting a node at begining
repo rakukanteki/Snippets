@@ -1,0 +1,14 @@
+//INSERTING A NODE AT THE BEGINING 
+struct node* addatbegin(struct node* head,int data)
+{
+    struct node* temp = (struct node*)malloc(sizeof(struct node));
+    temp->prev=NULL;
+    temp->data=data;
+    temp->next=NULL;
+
+    temp->next=head;
+    head->prev=temp;
+    head=temp;
+
+    return head;
+}
