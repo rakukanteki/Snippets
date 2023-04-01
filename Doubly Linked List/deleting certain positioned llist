@@ -10,7 +10,7 @@ struct node* delposition(struct node* head,int position)
     }
     else
     {
-        while(position>1)
+        while(position>1)//say we are deleting 2nd node
         {
             temp=temp->next;
             position--;
