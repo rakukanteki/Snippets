@@ -1,0 +1,31 @@
+//SORTING THE LIST
+//BUBBLE SORT
+struct node* sort(struct node* head)
+{
+    struct node* ptr1, *ptr2;
+    ptr1=head;
+
+    if(head==NULL)
+    {
+        cout<<"No nodes"<<endl;
+    }
+    else
+    {
+        while(ptr1->link!=NULL)
+        {
+            ptr2=ptr1->link;
+            while(ptr2!=NULL)
+            {
+                if(ptr1->data > ptr2->data)
+                {
+                    int temp=ptr1->data;
+                    ptr1->data=ptr2->data;
+                    ptr2->data=temp; 
+                }
+                ptr2=ptr2->link;
+            }
+            ptr1=ptr1->link;
+        }
+        return head;
+    }
+}
